@@ -30,8 +30,8 @@ class PersonA implements Runnable {
                 e.printStackTrace();
             }
         }
-
     }
+
 }
 
 class PersonB implements Runnable {
@@ -53,6 +53,7 @@ class PersonB implements Runnable {
             }
         }
     }
+
 }
 
 public class Test5 {
