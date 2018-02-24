@@ -10,7 +10,7 @@ class Thread4 implements Runnable {
     static int tick = 20;
 
     // 创建一个静态钥匙
-    static Object ob = "LOCK";//值是任意的
+    static Object ob = "Lock";//值是任意的
 
     @Override
     public void run() {
