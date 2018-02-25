@@ -1,15 +1,33 @@
+import java.util.concurrent.atomic.AtomicInteger;
+
 class Bank {
-    static int money = 1000;
+//    static int money = 1000;
+    static AtomicInteger money = new AtomicInteger(1000);
+
+    public static Object Lock = new Object();
 
     public void counter(int money) {
-        Bank.money -= money;
-        System.out.println("A取走了" + money + "还剩下" + (Bank.money));
+        synchronized (Lock) {
+//            Bank.money -= money;
+            Bank.money.addAndGet(-money);
+            System.out.println("A取走了" + money + "还剩下" + (Bank.money));
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+        }
     }
 
     public void ATM(int money) {
-        Bank.money -= money;
-        System.out.println("B取走了" + money + "还剩下" + (Bank.money));
+        synchronized (Lock) {
+//            Bank.money -= money;
+            Bank.money.addAndGet(-money);
+            System.out.println("B取走了" + money + "还剩下" + (Bank.money));
+        }
     }
+
+
 }
 
 class PersonA implements Runnable {
@@ -22,7 +40,8 @@ class PersonA implements Runnable {
 
     @Override
     public void run() {
-        while (Bank.money >= 100) {
+        while (Bank.money.get() >= 100) {
+//        while (Bank.money >= 100) {
             bank.counter(100);// 每次取100块
             try {
                 Thread.sleep( 100);//休息0.1秒
@@ -44,7 +63,8 @@ class PersonB implements Runnable {
 
     @Override
     public void run() {
-        while (Bank.money >= 200) {
+        while (Bank.money.get() >= 200) {
+//        while (Bank.money >= 200) {
             bank.ATM(200);// 每次取200块
             try {
                 Thread.sleep( 100);//休息0.1秒
