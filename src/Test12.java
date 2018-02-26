@@ -24,6 +24,10 @@ class PrintDemo12 {
 class ThreadDemo12 extends Thread {
     PrintDemo12 printDemo12;
 
+    /**
+     * @param name
+     * @param printDemo
+     */
     ThreadDemo12(String name, PrintDemo12 printDemo) {
         super(name);
         this.printDemo12 = printDemo;
