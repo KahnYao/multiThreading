@@ -35,6 +35,24 @@ public class Test16 {
         Date y = c.getTime();
         String year = format.format(y);
         System.out.println("过去一年：" + year);
+
+
+        //获取当前月最后一天
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar ca = Calendar.getInstance();
+//        c.add(Calendar.YEAR, 1);
+        ca.set(Calendar.DAY_OF_MONTH,1);//设置为1号,当前日期既为本月第一天
+        String first = format1.format(ca.getTime());
+        System.out.println("当前月份第一天：" + first);
+
+
+        //获取当前月最后一天
+        SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd 23:59:59");
+//        Calendar ca = Calendar.getInstance();
+        ca.set(Calendar.DAY_OF_MONTH, ca.getActualMaximum(Calendar.DAY_OF_MONTH));
+        String last = format1.format(ca.getTime());
+        System.out.println("当前月份最后一天：" + last);
+
     }
 
 }
