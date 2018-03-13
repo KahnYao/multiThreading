@@ -5,7 +5,7 @@ public class Test27 {
      */
     public static void main(String[] args) {
         int m = 6, n = 5;
-        int A[][] = {{1, 1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 0, 0, 1}, {1, 1, 1, 1, 0}, {1, 1, 1, 0, 0}, {1, 0, 1, 1, 1}};
+        int A[][] = {{1, 1, 1, 1, 1}, {1, 1, 1, 0, 1}, {1, 1, 0, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 0, 1}, {1, 1, 1, 1, 1}};
         int r = Math.min(m, n);
         r = explore(A, r);
         System.out.println("\n****");
@@ -26,7 +26,7 @@ public class Test27 {
                 if (A[i][j] != 1) {
                     System.out.print("\nx " + i);
                     System.out.print("\ny " + j);
-                    if (i == 1 && j == 1) {
+                    if ((i == 1 && j == 1) || (i == 0 && j == 1) || (i == 1 && j == 0)) {
                         return 0;
                     }
                     return explore(A, Math.max(i, j));
