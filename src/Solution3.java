@@ -18,7 +18,7 @@ public class Solution3 {
      * @param p
      * @return
      */
-    static int move_square(int[][] A, int p) {
+    private static int move_square(int[][] A, int p) {
         System.out.println("\n=== " + p);
         for (int i = 0; i < p; i++) {
             for (int j = 0; j < p; j++) {

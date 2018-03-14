@@ -17,7 +17,7 @@ public class Solution1 {
      * @param N
      * @return
      */
-    static int breakChain(int A[], int N) {
+    private static int breakChain(int A[], int N) {
         int m = A[0] + A[2];
         int n;
         for (int i = 0; i < A.length; i++) {

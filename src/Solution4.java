@@ -4,13 +4,11 @@ public class Solution4 {
      * @param args
      */
     public static void main(String[] args) {
-
         int A[][] = {{2, 3, 4, 8}, {5, 7, 9, 12}, {1, 0, 6, 10}, {9, 3, 7, 11}};
         int[] result = circlePrint(A, 4, 4);
         for (int i = 0; i < result.length; i++) {
             System.out.print(result[i] + " ");
         }
-
     }
 
     /**
@@ -19,7 +17,7 @@ public class Solution4 {
      * @param m
      * @return
      */
-    public static int[] circlePrint(int[][] A, int n, int m) {
+    private static int[] circlePrint(int[][] A, int n, int m) {
         int startX = 0;
         int endX = m - 1;
         int startY = 0;

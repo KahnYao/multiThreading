@@ -16,7 +16,7 @@ public class Solution2 {
      * @param m
      * @param s
      */
-    static int[] heap(int[] A, int m, boolean s) {
+    private static int[] heap(int[] A, int m, boolean s) {
         int[] M = new int[m];
         if (!s) {
             for (int i = 0; i < m; i++) {
@@ -40,7 +40,7 @@ public class Solution2 {
      * @param A
      * @param m
      */
-    static int[] solve(int[] A, int m) {
+    private static int[] solve(int[] A, int m) {
         int R[] = heap(A, m, false);
         for (int i = m; i < A.length; i++) {
             if (A[i] > R[0]) {
@@ -56,10 +56,9 @@ public class Solution2 {
      * @param i
      * @param j
      */
-    static int[] swap(int[] A, int i, int j) {
+    private static void swap(int[] A, int i, int j) {
         A[i] = A[i] + A[j];
         A[j] = A[i] - A[j];
         A[i] = A[i] - A[j];
-        return A;
     }
 }
