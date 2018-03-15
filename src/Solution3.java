@@ -25,7 +25,7 @@ public class Solution3 {
                 System.out.print(" " + A[i][j] + " ");
                 if (A[i][j] != 1) {
                     if ((i == 1 && j == 1) || (i == 0 && j == 1) || (i == 1 && j == 0)) {
-                        return 0;
+                        return 1;
                     }
                     return move_square(A, Math.max(i, j));
                 }
@@ -34,4 +34,6 @@ public class Solution3 {
         }
         return p;
     }
+
+
 }

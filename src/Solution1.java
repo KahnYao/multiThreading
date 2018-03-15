@@ -10,7 +10,6 @@ public class Solution1 {
         System.out.println(m);
     }
 
-
     /**
      *
      * @param A

@@ -5,7 +5,7 @@ public class Solution4 {
      */
     public static void main(String[] args) {
         int A[][] = {{2, 3, 4, 8}, {5, 7, 9, 12}, {1, 0, 6, 10}, {9, 3, 7, 11}};
-        int[] result = circlePrint(A, 4, 4);
+        int[] result = circlePrint(A, 3, 4);
         for (int i = 0; i < result.length; i++) {
             System.out.print(result[i] + " ");
         }
